@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="creationDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="label_info.Text" xml:space="preserve">
+    <value>In Argentina and in Latin American countries, it's very common for people in their neighborhoods to have what are called "Kiosks"; they sell everything and there's no need to go to a supermarket when you have one of these next to your house.</value>
+  </data>
+  <data name="label_info2.Text" xml:space="preserve">
+    <value>This application is designed for those businesses; you don't need to have an account or a barcode reader, it's easy to use, and it will help manage inventory and sales. Most importantly, it's completely free!</value>
+  </data>
 </root>

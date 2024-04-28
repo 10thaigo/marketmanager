@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.panel_top = new System.Windows.Forms.Panel();
+            this.label_clock = new System.Windows.Forms.Label();
             this.panel_buttons = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel_view = new System.Windows.Forms.Panel();
+            this.button_sell = new FontAwesome.Sharp.IconButton();
+            this.button_stock = new FontAwesome.Sharp.IconButton();
             this.button_contacts = new FontAwesome.Sharp.IconButton();
             this.button_notes = new FontAwesome.Sharp.IconButton();
             this.button_settings = new FontAwesome.Sharp.IconButton();
             this.button_information = new FontAwesome.Sharp.IconButton();
-            this.button_stock = new FontAwesome.Sharp.IconButton();
-            this.button_sell = new FontAwesome.Sharp.IconButton();
-            this.label_clock = new System.Windows.Forms.Label();
+            this.panel_view = new System.Windows.Forms.Panel();
+            this.button_exit = new System.Windows.Forms.Button();
             this.panel_top.SuspendLayout();
             this.panel_buttons.SuspendLayout();
             this.SuspendLayout();
@@ -45,12 +46,24 @@
             // panel_top
             // 
             this.panel_top.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel_top.Controls.Add(this.button_exit);
             this.panel_top.Controls.Add(this.label_clock);
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_top.Location = new System.Drawing.Point(0, 0);
             this.panel_top.Name = "panel_top";
             this.panel_top.Size = new System.Drawing.Size(1000, 32);
             this.panel_top.TabIndex = 0;
+            // 
+            // label_clock
+            // 
+            this.label_clock.AutoSize = true;
+            this.label_clock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_clock.ForeColor = System.Drawing.Color.White;
+            this.label_clock.Location = new System.Drawing.Point(3, 9);
+            this.label_clock.Name = "label_clock";
+            this.label_clock.Size = new System.Drawing.Size(349, 15);
+            this.label_clock.TabIndex = 0;
+            this.label_clock.Text = "The current date and time is Fri Apr 26 17:54:00 2024";
             // 
             // panel_buttons
             // 
@@ -68,13 +81,45 @@
             this.panel_buttons.Size = new System.Drawing.Size(200, 518);
             this.panel_buttons.TabIndex = 1;
             // 
-            // panel_view
+            // button_sell
             // 
-            this.panel_view.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_view.Location = new System.Drawing.Point(200, 32);
-            this.panel_view.Name = "panel_view";
-            this.panel_view.Size = new System.Drawing.Size(800, 518);
-            this.panel_view.TabIndex = 2;
+            this.button_sell.FlatAppearance.BorderSize = 0;
+            this.button_sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_sell.ForeColor = System.Drawing.Color.DimGray;
+            this.button_sell.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            this.button_sell.IconColor = System.Drawing.Color.DimGray;
+            this.button_sell.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.button_sell.IconSize = 42;
+            this.button_sell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_sell.Location = new System.Drawing.Point(0, 0);
+            this.button_sell.Margin = new System.Windows.Forms.Padding(0);
+            this.button_sell.Name = "button_sell";
+            this.button_sell.Size = new System.Drawing.Size(200, 46);
+            this.button_sell.TabIndex = 6;
+            this.button_sell.Text = "Sell";
+            this.button_sell.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_sell.UseVisualStyleBackColor = true;
+            // 
+            // button_stock
+            // 
+            this.button_stock.FlatAppearance.BorderSize = 0;
+            this.button_stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_stock.ForeColor = System.Drawing.Color.DimGray;
+            this.button_stock.IconChar = FontAwesome.Sharp.IconChar.Box;
+            this.button_stock.IconColor = System.Drawing.Color.DimGray;
+            this.button_stock.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.button_stock.IconSize = 42;
+            this.button_stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_stock.Location = new System.Drawing.Point(0, 46);
+            this.button_stock.Margin = new System.Windows.Forms.Padding(0);
+            this.button_stock.Name = "button_stock";
+            this.button_stock.Size = new System.Drawing.Size(200, 46);
+            this.button_stock.TabIndex = 5;
+            this.button_stock.Text = "Stock";
+            this.button_stock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_stock.UseVisualStyleBackColor = true;
             // 
             // button_contacts
             // 
@@ -156,56 +201,26 @@
             this.button_information.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_information.UseVisualStyleBackColor = true;
             // 
-            // button_stock
+            // panel_view
             // 
-            this.button_stock.FlatAppearance.BorderSize = 0;
-            this.button_stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_stock.ForeColor = System.Drawing.Color.DimGray;
-            this.button_stock.IconChar = FontAwesome.Sharp.IconChar.Box;
-            this.button_stock.IconColor = System.Drawing.Color.DimGray;
-            this.button_stock.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.button_stock.IconSize = 42;
-            this.button_stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_stock.Location = new System.Drawing.Point(0, 46);
-            this.button_stock.Margin = new System.Windows.Forms.Padding(0);
-            this.button_stock.Name = "button_stock";
-            this.button_stock.Size = new System.Drawing.Size(200, 46);
-            this.button_stock.TabIndex = 5;
-            this.button_stock.Text = "Stock";
-            this.button_stock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_stock.UseVisualStyleBackColor = true;
+            this.panel_view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_view.Location = new System.Drawing.Point(200, 32);
+            this.panel_view.Name = "panel_view";
+            this.panel_view.Size = new System.Drawing.Size(800, 518);
+            this.panel_view.TabIndex = 2;
             // 
-            // button_sell
+            // button_exit
             // 
-            this.button_sell.FlatAppearance.BorderSize = 0;
-            this.button_sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_sell.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_sell.ForeColor = System.Drawing.Color.DimGray;
-            this.button_sell.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            this.button_sell.IconColor = System.Drawing.Color.DimGray;
-            this.button_sell.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.button_sell.IconSize = 42;
-            this.button_sell.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_sell.Location = new System.Drawing.Point(0, 0);
-            this.button_sell.Margin = new System.Windows.Forms.Padding(0);
-            this.button_sell.Name = "button_sell";
-            this.button_sell.Size = new System.Drawing.Size(200, 46);
-            this.button_sell.TabIndex = 6;
-            this.button_sell.Text = "Sell";
-            this.button_sell.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_sell.UseVisualStyleBackColor = true;
-            // 
-            // label_clock
-            // 
-            this.label_clock.AutoSize = true;
-            this.label_clock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_clock.ForeColor = System.Drawing.Color.White;
-            this.label_clock.Location = new System.Drawing.Point(3, 9);
-            this.label_clock.Name = "label_clock";
-            this.label_clock.Size = new System.Drawing.Size(296, 15);
-            this.label_clock.TabIndex = 0;
-            this.label_clock.Text = "The current date and time is Fri Apr 26 17:54:00 2024";
+            this.button_exit.FlatAppearance.BorderSize = 0;
+            this.button_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_exit.ForeColor = System.Drawing.Color.White;
+            this.button_exit.Location = new System.Drawing.Point(968, 0);
+            this.button_exit.Name = "button_exit";
+            this.button_exit.Size = new System.Drawing.Size(32, 32);
+            this.button_exit.TabIndex = 0;
+            this.button_exit.Text = "X";
+            this.button_exit.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
@@ -238,6 +253,7 @@
         private FontAwesome.Sharp.IconButton button_sell;
         private FontAwesome.Sharp.IconButton button_stock;
         private System.Windows.Forms.Label label_clock;
+        private System.Windows.Forms.Button button_exit;
     }
 }
 

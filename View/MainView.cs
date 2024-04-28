@@ -11,17 +11,20 @@ namespace MarketManager
         private IconButton activeButton = null;
 
         public event Action<string> ChangeView;
+        public event Action ExitApplication;
 
         public MainView()
         {
             InitializeComponent();
 
-            button_information.Click += (_, e) => SwitchButton("Notes", button_notes);
-            button_settings.Click += (_, e) => SwitchButton("Notes", button_notes);
+            button_information.Click += (_, e) => SwitchButton("Information", button_information);
+            button_settings.Click += (_, e) => SwitchButton("Settings", button_settings);
             button_notes.Click += (_, e) => SwitchButton("Notes", button_notes);
-            button_contacts.Click += (_, e) => SwitchButton("Notes", button_notes);
-            button_stock.Click += (_, e) => SwitchButton("Notes", button_notes);
-            button_sell.Click += (_, e) => SwitchButton("Notes", button_notes);
+            button_contacts.Click += (_, e) => SwitchButton("Contacts", button_contacts);
+            button_stock.Click += (_, e) => SwitchButton("Stock", button_stock);
+            button_sell.Click += (_, e) => SwitchButton("Sell", button_sell);
+
+            button_exit.Click += (_, e) => ExitApplication?.Invoke();
         }
 
         public void SwitchPanel(Form newView)
@@ -44,7 +47,7 @@ namespace MarketManager
             if(activeButton != null)
             {
                 activeButton.BackColor = SystemColors.Control;
-                activeButton.BackColor = Color.DimGray;
+                activeButton.ForeColor = Color.DimGray;
                 activeButton.IconColor = Color.DimGray;
             }
 
