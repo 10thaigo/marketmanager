@@ -1,6 +1,6 @@
 ﻿namespace MarketManager.Dialogs.Notes
 {
-    partial class AddNoteDialog
+    partial class EditNoteDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.label_notedescription = new System.Windows.Forms.Label();
             this.textbox_title = new System.Windows.Forms.TextBox();
             this.textbox_description = new System.Windows.Forms.RichTextBox();
-            this.button_addnote = new FontAwesome.Sharp.IconButton();
+            this.button_editnote = new FontAwesome.Sharp.IconButton();
             this.label_error_title = new System.Windows.Forms.Label();
             this.label_error_description = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
@@ -59,9 +59,9 @@
             this.label_title.ForeColor = System.Drawing.Color.White;
             this.label_title.Location = new System.Drawing.Point(3, 9);
             this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(93, 15);
+            this.label_title.Size = new System.Drawing.Size(71, 15);
             this.label_title.TabIndex = 1;
-            this.label_title.Text = "Add new note";
+            this.label_title.Text = "undefined";
             // 
             // button_exit
             // 
@@ -122,25 +122,25 @@
             this.textbox_description.TabIndex = 5;
             this.textbox_description.Text = "";
             // 
-            // button_addnote
+            // button_editnote
             // 
-            this.button_addnote.FlatAppearance.BorderSize = 0;
-            this.button_addnote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_addnote.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_addnote.ForeColor = System.Drawing.Color.DimGray;
-            this.button_addnote.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.button_addnote.IconColor = System.Drawing.Color.DimGray;
-            this.button_addnote.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.button_addnote.IconSize = 42;
-            this.button_addnote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_addnote.Location = new System.Drawing.Point(222, 395);
-            this.button_addnote.Margin = new System.Windows.Forms.Padding(0);
-            this.button_addnote.Name = "button_addnote";
-            this.button_addnote.Size = new System.Drawing.Size(166, 46);
-            this.button_addnote.TabIndex = 6;
-            this.button_addnote.Text = "Add new note";
-            this.button_addnote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_addnote.UseVisualStyleBackColor = true;
+            this.button_editnote.FlatAppearance.BorderSize = 0;
+            this.button_editnote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_editnote.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_editnote.ForeColor = System.Drawing.Color.DimGray;
+            this.button_editnote.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            this.button_editnote.IconColor = System.Drawing.Color.DimGray;
+            this.button_editnote.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.button_editnote.IconSize = 42;
+            this.button_editnote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_editnote.Location = new System.Drawing.Point(280, 395);
+            this.button_editnote.Margin = new System.Windows.Forms.Padding(0);
+            this.button_editnote.Name = "button_editnote";
+            this.button_editnote.Size = new System.Drawing.Size(108, 46);
+            this.button_editnote.TabIndex = 6;
+            this.button_editnote.Text = "Done";
+            this.button_editnote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_editnote.UseVisualStyleBackColor = true;
             // 
             // label_error_title
             // 
@@ -166,21 +166,21 @@
             this.label_error_description.Text = "Required field";
             this.label_error_description.Visible = false;
             // 
-            // AddNoteDialog
+            // EditNoteDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 450);
             this.Controls.Add(this.label_error_description);
             this.Controls.Add(this.label_error_title);
-            this.Controls.Add(this.button_addnote);
+            this.Controls.Add(this.button_editnote);
             this.Controls.Add(this.textbox_description);
             this.Controls.Add(this.textbox_title);
             this.Controls.Add(this.label_notedescription);
             this.Controls.Add(this.label_notetitle);
             this.Controls.Add(this.panel_top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddNoteDialog";
+            this.Name = "EditNoteDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add new note";
             this.panel_top.ResumeLayout(false);
@@ -199,7 +199,7 @@
         private System.Windows.Forms.Label label_notedescription;
         private System.Windows.Forms.TextBox textbox_title;
         private System.Windows.Forms.RichTextBox textbox_description;
-        private FontAwesome.Sharp.IconButton button_addnote;
+        private FontAwesome.Sharp.IconButton button_editnote;
         private System.Windows.Forms.Label label_error_title;
         private System.Windows.Forms.Label label_error_description;
     }

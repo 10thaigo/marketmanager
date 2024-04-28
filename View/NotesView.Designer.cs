@@ -28,18 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.icon = new FontAwesome.Sharp.IconPictureBox();
             this.label_title = new System.Windows.Forms.Label();
             this.label_info = new System.Windows.Forms.Label();
             this.button_addnote = new FontAwesome.Sharp.IconButton();
-            this.grid_notes = new System.Windows.Forms.DataGridView();
-            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel_notes = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_notes)).BeginInit();
             this.SuspendLayout();
             // 
             // icon
@@ -99,75 +93,21 @@
             this.button_addnote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_addnote.UseVisualStyleBackColor = true;
             // 
-            // grid_notes
+            // panel_notes
             // 
-            this.grid_notes.AllowUserToAddRows = false;
-            this.grid_notes.AllowUserToDeleteRows = false;
-            this.grid_notes.AllowUserToResizeColumns = false;
-            this.grid_notes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.grid_notes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.grid_notes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grid_notes.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.grid_notes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grid_notes.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.grid_notes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_notes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.grid_notes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.grid_notes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.title,
-            this.creationDate});
-            this.grid_notes.EnableHeadersVisualStyles = false;
-            this.grid_notes.Location = new System.Drawing.Point(16, 68);
-            this.grid_notes.MultiSelect = false;
-            this.grid_notes.Name = "grid_notes";
-            this.grid_notes.ReadOnly = true;
-            this.grid_notes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_notes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.grid_notes.RowHeadersVisible = false;
-            this.grid_notes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.grid_notes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.grid_notes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_notes.ShowCellErrors = false;
-            this.grid_notes.ShowCellToolTips = false;
-            this.grid_notes.ShowEditingIcon = false;
-            this.grid_notes.ShowRowErrors = false;
-            this.grid_notes.Size = new System.Drawing.Size(772, 392);
-            this.grid_notes.TabIndex = 6;
-            this.grid_notes.Visible = false;
-            // 
-            // title
-            // 
-            this.title.HeaderText = "Title";
-            this.title.Name = "title";
-            this.title.ReadOnly = true;
-            // 
-            // creationDate
-            // 
-            this.creationDate.HeaderText = "Creation date";
-            this.creationDate.Name = "creationDate";
-            this.creationDate.ReadOnly = true;
+            this.panel_notes.AutoScroll = true;
+            this.panel_notes.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel_notes.Location = new System.Drawing.Point(16, 68);
+            this.panel_notes.Name = "panel_notes";
+            this.panel_notes.Size = new System.Drawing.Size(772, 392);
+            this.panel_notes.TabIndex = 6;
             // 
             // NotesView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 518);
-            this.Controls.Add(this.grid_notes);
+            this.Controls.Add(this.panel_notes);
             this.Controls.Add(this.button_addnote);
             this.Controls.Add(this.label_info);
             this.Controls.Add(this.label_title);
@@ -176,7 +116,6 @@
             this.Name = "NotesView";
             this.Text = "NotesView";
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_notes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,8 +127,6 @@
         private System.Windows.Forms.Label label_title;
         private System.Windows.Forms.Label label_info;
         private FontAwesome.Sharp.IconButton button_addnote;
-        private System.Windows.Forms.DataGridView grid_notes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn creationDate;
+        private System.Windows.Forms.FlowLayoutPanel panel_notes;
     }
 }

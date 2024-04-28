@@ -1,6 +1,6 @@
 ﻿namespace MarketManager.Dialogs.Notes
 {
-    partial class AddNoteDialog
+    partial class ViewNoteDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,6 @@
             this.label_notedescription = new System.Windows.Forms.Label();
             this.textbox_title = new System.Windows.Forms.TextBox();
             this.textbox_description = new System.Windows.Forms.RichTextBox();
-            this.button_addnote = new FontAwesome.Sharp.IconButton();
-            this.label_error_title = new System.Windows.Forms.Label();
-            this.label_error_description = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,9 +56,9 @@
             this.label_title.ForeColor = System.Drawing.Color.White;
             this.label_title.Location = new System.Drawing.Point(3, 9);
             this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(93, 15);
+            this.label_title.Size = new System.Drawing.Size(71, 15);
             this.label_title.TabIndex = 1;
-            this.label_title.Text = "Add new note";
+            this.label_title.Text = "undefined";
             // 
             // button_exit
             // 
@@ -106,6 +103,7 @@
             this.textbox_title.ForeColor = System.Drawing.Color.DimGray;
             this.textbox_title.Location = new System.Drawing.Point(7, 69);
             this.textbox_title.Name = "textbox_title";
+            this.textbox_title.ReadOnly = true;
             this.textbox_title.Size = new System.Drawing.Size(381, 15);
             this.textbox_title.TabIndex = 4;
             // 
@@ -117,72 +115,26 @@
             this.textbox_description.ForeColor = System.Drawing.Color.DimGray;
             this.textbox_description.Location = new System.Drawing.Point(7, 114);
             this.textbox_description.Name = "textbox_description";
+            this.textbox_description.ReadOnly = true;
             this.textbox_description.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.textbox_description.Size = new System.Drawing.Size(381, 267);
             this.textbox_description.TabIndex = 5;
             this.textbox_description.Text = "";
             // 
-            // button_addnote
-            // 
-            this.button_addnote.FlatAppearance.BorderSize = 0;
-            this.button_addnote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_addnote.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_addnote.ForeColor = System.Drawing.Color.DimGray;
-            this.button_addnote.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.button_addnote.IconColor = System.Drawing.Color.DimGray;
-            this.button_addnote.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.button_addnote.IconSize = 42;
-            this.button_addnote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_addnote.Location = new System.Drawing.Point(222, 395);
-            this.button_addnote.Margin = new System.Windows.Forms.Padding(0);
-            this.button_addnote.Name = "button_addnote";
-            this.button_addnote.Size = new System.Drawing.Size(166, 46);
-            this.button_addnote.TabIndex = 6;
-            this.button_addnote.Text = "Add new note";
-            this.button_addnote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_addnote.UseVisualStyleBackColor = true;
-            // 
-            // label_error_title
-            // 
-            this.label_error_title.AutoSize = true;
-            this.label_error_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_error_title.ForeColor = System.Drawing.Color.Red;
-            this.label_error_title.Location = new System.Drawing.Point(52, 51);
-            this.label_error_title.Name = "label_error_title";
-            this.label_error_title.Size = new System.Drawing.Size(86, 13);
-            this.label_error_title.TabIndex = 7;
-            this.label_error_title.Text = "Required field";
-            this.label_error_title.Visible = false;
-            // 
-            // label_error_description
-            // 
-            this.label_error_description.AutoSize = true;
-            this.label_error_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_error_description.ForeColor = System.Drawing.Color.Red;
-            this.label_error_description.Location = new System.Drawing.Point(109, 96);
-            this.label_error_description.Name = "label_error_description";
-            this.label_error_description.Size = new System.Drawing.Size(86, 13);
-            this.label_error_description.TabIndex = 8;
-            this.label_error_description.Text = "Required field";
-            this.label_error_description.Visible = false;
-            // 
-            // AddNoteDialog
+            // ViewNoteDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 450);
-            this.Controls.Add(this.label_error_description);
-            this.Controls.Add(this.label_error_title);
-            this.Controls.Add(this.button_addnote);
+            this.ClientSize = new System.Drawing.Size(400, 393);
             this.Controls.Add(this.textbox_description);
             this.Controls.Add(this.textbox_title);
             this.Controls.Add(this.label_notedescription);
             this.Controls.Add(this.label_notetitle);
             this.Controls.Add(this.panel_top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddNoteDialog";
+            this.Name = "ViewNoteDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add new note";
+            this.Text = "View note";
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
             this.ResumeLayout(false);
@@ -199,8 +151,5 @@
         private System.Windows.Forms.Label label_notedescription;
         private System.Windows.Forms.TextBox textbox_title;
         private System.Windows.Forms.RichTextBox textbox_description;
-        private FontAwesome.Sharp.IconButton button_addnote;
-        private System.Windows.Forms.Label label_error_title;
-        private System.Windows.Forms.Label label_error_description;
     }
 }

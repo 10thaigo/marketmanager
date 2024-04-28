@@ -13,6 +13,8 @@ namespace MarketManager.Controller
     {
         public NotesView View { get; }
         public AddNoteDialog _addNoteDialog;
+        public ViewNoteDialog _viewNoteDialog;
+        public EditNoteDialog _editNoteDialog;
         private List<Note> _notes;
 
         public NotesController(NotesView view)
@@ -36,34 +38,97 @@ namespace MarketManager.Controller
                     _addNoteDialog = null;
                 };
 
-                _addNoteDialog.Insert += () =>
+                _addNoteDialog.Insert += (_) =>
                 {
+                    _notes.Add(_);
+                    UpdateNotes($"{Application.StartupPath}/notes.json");
+                    View.ShowNote(_);
 
+                    _addNoteDialog.Close();
+                    _addNoteDialog = null;
                 };
 
                 _addNoteDialog.Show();
             };
 
-            View.FormClosed += (_, e) => _addNoteDialog?.Close();
+            View.ViewNote += (_) =>
+            {
+                _viewNoteDialog?.Close();
+                _viewNoteDialog = new ViewNoteDialog(_);
+                _viewNoteDialog.Show();
+
+                _viewNoteDialog.Exit += () =>
+                {
+                    _viewNoteDialog.Close();
+                    _viewNoteDialog = null;
+                };
+            };
+
+            View.DeleteNote += (_) =>
+            {
+                var result = MessageBox.Show($"Are you sure you want to delete the note \"{_.Title}\"? The changes are irreversible.", "Confirmation required", MessageBoxButtons.YesNo);
+                if(result == DialogResult.Yes)
+                {
+                    _notes.Remove(_);
+                    UpdateNotes($"{Application.StartupPath}/notes.json");
+                    View.HideNote(_);
+
+                    if (_notes.Count == 0)
+                    {
+                        View.UpdateLabel("No notes have been created.");
+                    }
+                }
+            };
+
+            View.EditNote += (_) =>
+            {
+                _editNoteDialog?.Close();
+                _editNoteDialog = new EditNoteDialog(_);
+                _editNoteDialog.Show();
+
+                _editNoteDialog.Edit += (title, description) =>
+                {
+                    _.Title = title;
+                    _.Description = description;
+
+                    UpdateNotes($"{Application.StartupPath}/notes.json");
+                    View.UpdateNote(_);
+
+                    _editNoteDialog.Close();
+                    _editNoteDialog = null;
+                };
+
+                _editNoteDialog.Exit += () =>
+                {
+                    _editNoteDialog.Close();
+                    _editNoteDialog = null;
+                };
+            };
+
+            View.FormClosed += (_, e) =>
+            {
+                _addNoteDialog?.Close();
+                _viewNoteDialog?.Close();
+                _editNoteDialog?.Close();
+            };
         }
 
         public void LoadNotes(string filePath)
         {
             try
             {
+                string json = "";
+
                 if (!File.Exists(filePath))
                 {
                     _notes = new List<Note>();
-                    var json = JsonConvert.SerializeObject(_notes);
+                    json = JsonConvert.SerializeObject(_notes);
                     File.WriteAllText(filePath, json);
                 }
                 else
                 {
-                    var json = File.ReadAllText(filePath);
+                    json = File.ReadAllText(filePath);
                     _notes = JsonConvert.DeserializeObject<List<Note>>(json);
-
-                    _notes.Add(new Note() { Title = "Test", Description = "This is a test", CreationDate = DateTime.Now });
-
                     View.ShowNotes(_notes);
                 }
                 if (_notes.Count == 0)
@@ -74,6 +139,19 @@ namespace MarketManager.Controller
             catch (Exception ex)
             {
                 View.UpdateLabel($"An error occurred while loading the notes: {ex.Message}");
+            }
+        }
+
+        public void UpdateNotes(string filePath)
+        {
+            try
+            {
+                var json = JsonConvert.SerializeObject(_notes);
+                File.WriteAllText(filePath, json);
+            }
+            catch (Exception ex)
+            {
+                View.UpdateLabel($"An error occurred while saving the note: {ex.Message}");
             }
         }
     }

@@ -4,18 +4,22 @@ using System.Windows.Forms;
 
 namespace MarketManager.Dialogs.Notes
 {
-    public partial class AddNoteDialog : Form
+    public partial class EditNoteDialog : Form
     {
 
         public event Action Exit;
-        public event Action<Note> Insert;
+        public event Action<string, string> Edit;
 
-        public AddNoteDialog()
+        public EditNoteDialog(Note note)
         {
             InitializeComponent();
 
+            label_title.Text = $"Editing \"{note.Title}\"";
+            textbox_title.Text = note.Title;
+            textbox_description.Text = note.Description;
+
             button_exit.Click += (_, e) => Exit?.Invoke();
-            button_addnote.Click += (_, e) =>
+            button_editnote.Click += (_, e) =>
             {
                 bool validTitle = false;
                 bool validDescription = false;
@@ -52,7 +56,7 @@ namespace MarketManager.Dialogs.Notes
 
                 if(validTitle && validDescription)
                 {
-                    Insert?.Invoke(new Note(textbox_title.Text, textbox_description.Text, DateTime.Now));
+                    Edit?.Invoke(textbox_title.Text, textbox_description.Text);
                 }
             };
         }
