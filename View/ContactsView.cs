@@ -8,5 +8,12 @@ namespace MarketManager.View
         {
             InitializeComponent();
         }
+
+        public void UpdateLabel(string text)
+        {
+            label_info.Visible = true;
+            panel_contacts.Visible = false;
+            label_info.Text = text;
+        }
     }
 }

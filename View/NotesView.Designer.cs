@@ -84,12 +84,12 @@
             this.button_addnote.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button_addnote.IconSize = 42;
             this.button_addnote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_addnote.Location = new System.Drawing.Point(625, 463);
+            this.button_addnote.Location = new System.Drawing.Point(652, 463);
             this.button_addnote.Margin = new System.Windows.Forms.Padding(0);
             this.button_addnote.Name = "button_addnote";
-            this.button_addnote.Size = new System.Drawing.Size(166, 46);
+            this.button_addnote.Size = new System.Drawing.Size(139, 46);
             this.button_addnote.TabIndex = 5;
-            this.button_addnote.Text = "Add new note";
+            this.button_addnote.Text = "New note";
             this.button_addnote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_addnote.UseVisualStyleBackColor = true;
             // 
